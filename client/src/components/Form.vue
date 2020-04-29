@@ -39,7 +39,7 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">By signing up to you our Terms and that you have read our <span style="font-weight:bold;">Data Use Palicy</span>, including our <span style="font-weight:bold;">Cookie Use.</span></label>
           </div>
-          <button type="submit" style="width: 100%;" class="btn btn-primary mt-4" @click="apply">Apply for this job</button>
+          <button type="submit" style="width: 100%;" class="btn mt-4 apply" @click="apply">Apply for this job</button>
         </form>
 			</div>
 
@@ -108,5 +108,20 @@ data() {
 </script>
 
 <style lang="css" scoped>
+.col-md-6.form {
+  background-color:#495A50;
+  color: white;
+}
 
+.form-group span {
+  color: #F5B971 !important;
+}
+
+.apply {
+  border: none;
+  height: 50px;
+  color: white;
+  padding: 15px auto;
+  background-color: #F5B971;
+}
 </style>

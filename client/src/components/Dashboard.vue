@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-2" style="background-color:red; height: 100vh;">
+      <div class="col-2" style="background-color:#495A50; height: 100vh;">
         <div>User</div>
-        <div class="btn">
-          <p style="font-weight: bold;">Applications</p>
+        <div class="app">
+          <p>Applications</p>
         </div>
       </div>
       <div class="col-10 mt-5 pl-5">
@@ -103,5 +103,21 @@ export default {
   padding: 10px;
   border: 1px solid gray;
   margin: 0;
+}
+
+.app {
+  padding: auto;
+  margin-top: 150px;
+  background-color: #85A392 !important;
+}
+
+.app p {
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.app:hover {
+  cursor: pointer;
 }
 </style>
