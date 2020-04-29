@@ -4,6 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import 'popper.js'
+import '@fortawesome/fontawesome-free/js/all.js'
+import '@fortawesome/fontawesome-free/css/all.css'
 require('../node_modules/bootstrap/dist/css/bootstrap.css')
 require('../node_modules/bootstrap/dist/js/bootstrap.min.js')
 

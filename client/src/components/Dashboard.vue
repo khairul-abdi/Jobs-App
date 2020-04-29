@@ -2,7 +2,15 @@
   <div class="container">
     <div class="row">
       <div class="col-2" style="background-color:#495A50; height: 100vh;">
-        <div>User</div>
+        <div class="text-align d-flex">
+          <div class="ml-3">
+            <i class="fas fa-user fa-2x circle-icon"></i>
+          </div>
+          <div class="mt-4 ml-2">
+            <p>Testing User</p>
+            <p>Admin</p>
+          </div>
+        </div>
         <div class="app">
           <p>Applications</p>
         </div>
@@ -119,5 +127,15 @@ export default {
 
 .app:hover {
   cursor: pointer;
+}
+
+.circle-icon {
+  margin-top: 20px;
+  box-sizing: border-box;
+  padding: 7px;
+  width: 40px;
+  height: 40px;
+  background: #FFECC7;
+  border-radius: 50%;
 }
 </style>

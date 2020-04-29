@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-6 p-5 mt-5">
         <div class="form-group">
-          <label class="control-label" for="uploadfile">Upload File:</label>
+          <label class="control-label font-weight-bold" style="font-size: 20px; color: #495A50" for="uploadfile">Upload your Attachment</label>
           <div>
             <input @change="changeImg" type="file" class="form-control" id="uploadfile" placeholder="Upload File" name="uploadfile" />
           </div>
