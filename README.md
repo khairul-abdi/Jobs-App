@@ -44,7 +44,7 @@ Request/ Key:
   - password : ?
 
 Example create a new user using POST http://localhost:8000/users/register Api
-   <!-- ![alt text](https://github.com/khairul-abdi/customer-App/blob/Back-End/img/1.png) -->
+   ![alt text](https://github.com/khairul-abdi/Jobs-App/blob/master/img-documentation/admin-register.png)
 
 #### Login : http://localhost:8000/users/login
 Request/ Key:
@@ -52,7 +52,7 @@ Request/ Key:
   - password : 123456
 
 Example login using POST http://localhost:8000/users/login Api
-   <!-- ![alt text](https://github.com/khairul-abdi/customer-App/blob/Back-End/img/1.png) -->
+   ![alt text](https://github.com/khairul-abdi/Jobs-App/blob/master/img-documentation/login.png)
 
 #### Form : http://localhost:8000/api/form/init
 Request/ Key:
@@ -62,20 +62,20 @@ Request/ Key:
   - letter   : I need a job
 
 Example create a new form using POST http://localhost:8000/api/form/init Api
-   <!-- ![alt text](https://github.com/khairul-abdi/customer-App/blob/Back-End/img/1.png) -->
+   ![alt text](https://github.com/khairul-abdi/Jobs-App/blob/master/img-documentation/form.png)
 
 #### Upload : http://localhost:8000/api/files/upload
 Request/ Key:
   - uploadfile    : Select Files
 
-Example upload using POST http://localhost:8000/api/form/init Api
-   <!-- ![alt text](https://github.com/khairul-abdi/customer-App/blob/Back-End/img/1.png) -->
+Example upload using POST http://localhost:8000/api/files/upload Api
+   ![alt text](https://github.com/khairul-abdi/Jobs-App/blob/master/img-documentation/upload.png)
 
 
 #### Form : http://localhost:8000/api/form/all
 
-Example form all using GET http://localhost:8000/api/form/init Api
-   <!-- ![alt text](https://github.com/khairul-abdi/customer-App/blob/Back-End/img/1.png) -->
+Example form all using GET hhttp://localhost:8000/api/form/all Api
+   ![alt text](https://github.com/khairul-abdi/Jobs-App/blob/master/img-documentation/form-all.png)
 
 ### DEMO 
 
