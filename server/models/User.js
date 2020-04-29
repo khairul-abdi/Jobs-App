@@ -1,21 +1,15 @@
-const Sequelize = require('sequelize')
-const db = require('../database/db')
+const Sequelize = require("sequelize")
+const db = require("../config/db")
 
 module.exports = db.sequelize.define(
-  'users',
+  'user',
   {
     id: {
       type: Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    first_name: {
-      type: Sequelize.STRING
-    },
-    last_name: {
-      type: Sequelize.STRING
-    },
-    email: {
+    username: {
       type: Sequelize.STRING
     },
     password: {
@@ -27,6 +21,6 @@ module.exports = db.sequelize.define(
     }
   },
   {
-    timestamps: false 
+    timestamps: false
   }
-)
+);
