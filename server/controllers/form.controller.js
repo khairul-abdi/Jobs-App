@@ -1,9 +1,7 @@
 const db = require('../config/db.js')
 const Form = db.form
-const Files = db.files
 
 exports.init = (req, res) => {
-  console.log('wkwkwkwkwkw',req)
   Form.create({
     email: req.body.email,
     fullname: req.body.fullname,
@@ -16,19 +14,6 @@ exports.init = (req, res) => {
     console.log('>> Error while creating form: ' + err)
   })
 }
-
-// exports.findAll = (req, res) => {
-//   Form.findAll({
-//     attributes:['id', 'email', 'fullname','phone','letter'],
-//     include: [{
-//       model: Files,
-//       where: { id: db.Sequelize.col('form.id')},
-//       attributes: ['uploadfile']
-//     }],
-//   }).then((form) => {
-//     res.send(form)
-//   })
-// }
 
 exports.findAll = (req, res) => {
   Form.findAll()

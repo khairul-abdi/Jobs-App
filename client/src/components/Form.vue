@@ -2,7 +2,6 @@
 	<div class="container mt-5">
 		<div class="row">
 			<div class="col-md-6 p-5 mt-5">
-				<!-- <form class="form-horizontal" method="POST" enctype="multipart/form-data" id="fileUploadForm"> -->
         <div class="form-group">
           <label class="control-label" for="uploadfile">Upload File:</label>
           <div>
@@ -14,7 +13,6 @@
             <button type="submit" class="btn btn-primary" @click="btnSubmit">Upload</button>
           </div>
         </div>
-				<!-- </form> -->
 				<hr/>
 				<div v-for="(list, index) in listFiles" :key="index">{{ list }}</div>
 			</div>
@@ -23,25 +21,25 @@
         <form>
           <div class="form-group">
             <label for="exampleInputEmail1">Email <span>(*)</span></label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="email">
           </div>
           <div class="form-group">
             <label for="fullname">Fullname <span>(*)</span></label>
-            <input type="text" class="form-control" id="fullname" placeholder="Password">
+            <input type="text" class="form-control" id="fullname" v-model="fullname">
           </div>
           <div class="form-group">
             <label for="phone">Phone Number <span>(*)</span></label>
-            <input type="tel" class="form-control" id="phone" placeholder="Password">
+            <input type="tel" class="form-control" id="phone" v-model="phone">
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Short Cover Letter</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" v-model="letter" rows="3"></textarea>
           </div>
           <div class="form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">By signing up to you our Terms and that you have read our <span style="font-weight:bold;">Data Use Palicy</span>, including our <span style="font-weight:bold;">Cookie Use.</span></label>
           </div>
-          <button type="submit" style="width: 100%;" class="btn btn-primary mt-4">Submit</button>
+          <button type="submit" style="width: 100%;" class="btn btn-primary mt-4" @click="apply">Apply for this job</button>
         </form>
 			</div>
 
@@ -58,7 +56,11 @@ export default {
 data() {
     return {
       listFiles: null,
-      targetFile: null
+      targetFile: null,
+      email: '',
+      fullname: '',
+      phone: '',
+      letter: ''
     }
   },
   methods: {
@@ -82,6 +84,23 @@ data() {
       } else {
         console.log('sudah penuh')
       }
+    },
+    apply() {
+      axios.post('http://localhost:8000/api/form/init',
+      {
+        email: this.email,
+        fullname: this.fullname,
+        phone: this.phone,
+        letter: this.letter
+      }).then(resp => {
+        console.log(resp)
+        this.email = '',
+        this.fullname = '',
+        this.phone = '',
+        this.letter = ''
+      }).catch((err) => {
+        console.log(err)
+      })
     }
   }
 }

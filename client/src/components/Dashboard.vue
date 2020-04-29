@@ -1,11 +1,72 @@
 <template>
-  <div class="dashboard">
-    <h1>Dashboard sdsd</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-2" style="background-color:red; height: 100vh;">
+        <div>User</div>
+        <div class="btn">
+          <p style="font-weight: bold;">Applications</p>
+        </div>
+      </div>
+      <div class="col-10 mt-5 pl-5">
+        <div>
+          <nav class="navbar navbar-light">
+            <a class="navbar-brand" style="font-weight: bold; font-size:26px;">Aplication Data</a>
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </nav>
+        </div>
+        <hr>
+
+        <div class="float-right">
+            <div>
+              <p>Viewing 
+                  <span style="font-weight: bold;">1-10</span>
+                of 
+                  <span style="font-weight: bold;">20</span>
+                  <span class="box">1</span>
+                  <span class="box"><</span>
+                  <span class="box">></span>
+              </p>
+            </div>
+        </div>
+
+        <div class="">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Email</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Apply Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="list in listData" :key="list.id">
+                <th scope="row">{{ list.email }}</th>
+                <td>{{ list.fullname }}</td>
+                <td>{{ list.phone }}</td>
+                <td>{{ moment(list.createdAt).format('DD/MM/YYYY') }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
+import axios from 'axios'
+import moment from 'moment'
+import router from '../router'
+import EventBus from './EventBus'
 import jwtDecode from 'jwt-decode'
+
+Vue.prototype.moment = moment
 
 export default {  
   data() {
@@ -14,7 +75,19 @@ export default {
     return {
       username: decoded.username,
       password: decoded.password,
+      listData: []
     }
+  },
+  mounted(){
+    axios({
+      url: 'http://localhost:8000/api/form/all',
+      method: 'get',
+    }).then(resp => {
+      this.listData = resp.data
+      console.log(resp.data)
+    }).catch((err) => {
+      console.log(err)
+    })
   }
 }
 </script>
@@ -22,5 +95,13 @@ export default {
 <style lang="css" scoped>
 .dashboard {
   text-align: center;
+}
+
+.box {
+  width: 10px;
+  height: 8px;
+  padding: 10px;
+  border: 1px solid gray;
+  margin: 0;
 }
 </style>
