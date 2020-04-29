@@ -7,8 +7,7 @@
             <i class="fas fa-user fa-2x circle-icon"></i>
           </div>
           <div class="mt-4 ml-2">
-            <p>Testing User</p>
-            <p>Admin</p>
+            <p style="color:white; font-size: 14px;">Testing User <span>Admin</span></p>
           </div>
         </div>
         <div class="app">
